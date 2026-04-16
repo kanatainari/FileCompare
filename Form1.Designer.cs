@@ -2,15 +2,8 @@
 {
     partial class Form1
     {
-        /// <summary>
-        /// 필수 디자이너 변수입니다.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// 사용 중인 모든 리소스를 정리합니다.
-        /// </summary>
-        /// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,16 +15,15 @@
 
         #region Windows Form 디자이너에서 생성한 코드
 
-        /// <summary>
-        /// 디자이너 지원에 필요한 메서드입니다. 
-        /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
-        /// </summary>
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lvwLeftDir = new System.Windows.Forms.ListView();
+            this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnLeftDir = new System.Windows.Forms.Button();
             this.txtLeftDir = new System.Windows.Forms.TextBox();
@@ -40,17 +32,14 @@
             this.lblAppName = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lvwRightDir = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnRightDir = new System.Windows.Forms.Button();
             this.txtRightDir = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCopyFromRight = new System.Windows.Forms.Button();
-            this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -123,6 +112,21 @@
             this.lvwLeftDir.UseCompatibleStateImageBehavior = false;
             this.lvwLeftDir.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader0
+            // 
+            this.columnHeader0.Text = "이름";
+            this.columnHeader0.Width = 300;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "크기";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "수정일";
+            this.columnHeader2.Width = 160;
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.btnLeftDir);
@@ -175,6 +179,7 @@
             this.btnCopyFromLeft.TabIndex = 13;
             this.btnCopyFromLeft.Text = "> > >";
             this.btnCopyFromLeft.UseVisualStyleBackColor = true;
+            this.btnCopyFromLeft.Click += new System.EventHandler(this.btnCopyFromLeft_Click);
             // 
             // lblAppName
             // 
@@ -216,6 +221,21 @@
             this.lvwRightDir.TabIndex = 12;
             this.lvwRightDir.UseCompatibleStateImageBehavior = false;
             this.lvwRightDir.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "이름";
+            this.columnHeader3.Width = 300;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "크기";
+            this.columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "수정일";
+            this.columnHeader5.Width = 160;
             // 
             // panel2
             // 
@@ -268,36 +288,7 @@
             this.btnCopyFromRight.TabIndex = 12;
             this.btnCopyFromRight.Text = "< < <";
             this.btnCopyFromRight.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader0
-            // 
-            this.columnHeader0.Text = "이름";
-            this.columnHeader0.Width = 300;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "크기";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "수정일";
-            this.columnHeader2.Width = 160;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "이름";
-            this.columnHeader3.Width = 300;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "크기";
-            this.columnHeader4.Width = 100;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "수정일";
-            this.columnHeader5.Width = 160;
+            this.btnCopyFromRight.Click += new System.EventHandler(this.btnCopyFromRight_Click);
             // 
             // Form1
             // 
@@ -352,4 +343,3 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
-

@@ -147,5 +147,60 @@ namespace FileCompare
                 }
             }
         }
+
+        private void CopyFiles(ListView srcListView, string srcDirPath, string destDirPath)
+        {
+            if (!Directory.Exists(srcDirPath) || !Directory.Exists(destDirPath)) return;
+            if (srcListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("복사할 파일을 선택해주세요.");
+                return;
+            }
+
+            try
+            {
+                foreach (ListViewItem item in srcListView.SelectedItems)
+                {
+                    if (item.SubItems[1].Text == "<DIR>") continue;
+
+                    string fileName = item.Text;
+                    string srcFile = Path.Combine(srcDirPath, fileName);
+                    string destFile = Path.Combine(destDirPath, fileName);
+
+                    if (File.Exists(destFile))
+                    {
+                        DateTime srcTime = File.GetLastWriteTime(srcFile);
+                        DateTime destTime = File.GetLastWriteTime(destFile);
+
+                        // 원본(src)이 대상(dest)보다 오래된 경우 복사 중단
+                        if (srcTime < destTime)
+                        {
+                            string msg = $"[{fileName}]\n\n원본 파일이 대상 폴더의 파일보다 오래되었습니다.\n최신 파일을 보호하기 위해 복사를 취소합니다.";
+                            MessageBox.Show(msg, "복사 거부", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            continue; // 다음 파일로 넘어감
+                        }
+                    }
+
+                    File.Copy(srcFile, destFile, true);
+                }
+
+                PopulateListView(lvwLeftDir, txtLeftDir.Text, txtRightDir.Text);
+                PopulateListView(lvwRightDir, txtRightDir.Text, txtLeftDir.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("복사 중 오류 발생: " + ex.Message);
+            }
+        }
+
+        private void btnCopyFromLeft_Click(object sender, EventArgs e)
+        {
+            CopyFiles(lvwLeftDir, txtLeftDir.Text, txtRightDir.Text);
+        }
+
+        private void btnCopyFromRight_Click(object sender, EventArgs e)
+        {
+            CopyFiles(lvwRightDir, txtRightDir.Text, txtLeftDir.Text);
+        }
     }
 }
