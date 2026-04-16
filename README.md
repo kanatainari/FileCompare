@@ -27,13 +27,15 @@
 ## 실행 화면 (과제1)
 - 과제1 코드의 실행 스크린샷
 <p>
-  <img src="img/pic_1.png" width="30%" />
-  <img src="img/pic_2.png" width="30%" />
+  <img src="img/pic_1.png" width="45%" />
+</p>
+
+</p>
+  <img src="img/pic_2.png" width="45%" />
 </p>
 
 - 과제 내용
   - SplitContainer를 활용하여 화면을 좌우로 분할하여 구성한다.
-  - Panel을 활용하여 각 영역에 컨트롤을 배치한다.
   - TextBox와 Button을 활용하여 폴더 경로 입력 및 선택 UI를 구성한다.
   - ListView를 활용하여 폴더 내 파일 목록을 표시할 수 있도록 구성한다.
   - FolderBrowserDialog를 활용하여 폴더를 선택할 수 있도록 구성한다.
@@ -41,9 +43,7 @@
 
 - 구현 내용과 기능 설명
   - SplitContainer를 활용한 좌우 영역 분할 UI 구성 기능 구현
-  - Panel을 활용한 레이아웃 구조화 기능 구현
   - TextBox와 Button을 통한 폴더 경로 입력 및 선택 기능 구현
   - FolderBrowserDialog를 활용한 폴더 선택 기능 구현
   - 선택한 폴더 경로를 TextBox에 표시하는 기능 구현
-  - 기존 경로가 존재할 경우 초기 경로로 설정하는 기능 구현
-  - 컨트롤 이름을 기능에 맞게 설정하여 코드 가독성 향상 기능 구현
+  - 컨트롤 이름을 기능에 맞게 설정
